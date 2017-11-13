@@ -52,6 +52,28 @@ public class NikoStream {
 		}
 	}
 
+	public void write (String cmd) {
+		logger.debug("Sending data: {}", cmd);
+		try {
+			out.write(cmd.getBytes());
+		} catch (IOException e) {
+			logger.info("Error: {}", e);
+			e.printStackTrace();
+		}
+	}
+
+	public String read () {
+		try {
+			String data = in.readLine();
+			logger.debug("Receiving data: {}", data);
+			return data;
+		} catch (IOException e) {
+			logger.info("Error: {}", e);
+			e.printStackTrace();
+			return null;
+		}
+	}
+
 	public OutputStream getOut() {
 		return out;
 	}

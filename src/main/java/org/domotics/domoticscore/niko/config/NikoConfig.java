@@ -13,6 +13,11 @@ public class NikoConfig {
 
 	private final Logger logger = LoggerFactory.getLogger(NikoConfig.class);
 
+	private static final int BROADCAST_PORT = 10000;
+	private static final String BROADCAST_DEFAULT = "255.255.255.255";
+	private static final int BROADCAST_TIMEOUT = 2000;
+	private static final String BROADCAST_TEXT = "D";
+
 	private String ip;
 	private int port;
 
@@ -23,22 +28,19 @@ public class NikoConfig {
 
 	private String discover() {
 
-		//DatagramSocket socket;
-
 		try {
 
 			DatagramSocket socket = new DatagramSocket();
 			socket.setBroadcast(true);
 
-			byte[] sendData = "D".getBytes();
+
+			byte[] sendData = BROADCAST_TEXT.getBytes();
 
 			//Try the 255.255.255.255 first
-
-
 			try {
-				DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName("255.255.255.255"), 10000);
+				DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, InetAddress.getByName(BROADCAST_DEFAULT), BROADCAST_PORT);
 				socket.send(sendPacket);
-				logger.info(">>> Request packet sent to: 255.255.255.255 (DEFAULT)");
+				logger.info("Sending broadcast to: {} (DEFAULT)", BROADCAST_DEFAULT);
 			} catch (Exception e) {
 				logger.error("Error: {}", e);
 			}
@@ -57,41 +59,49 @@ public class NikoConfig {
 				for (InterfaceAddress interfaceAddress : networkInterface.getInterfaceAddresses()) {
 					InetAddress broadcast = interfaceAddress.getBroadcast();
 					if (broadcast == null) {
+						// no broadcast available for this Interface, skipping
 						continue;
 					}
 
 					// Send the broadcast package!
 					try {
-						DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, broadcast, 10000);
+						logger.info("Sending broadcast to: " + broadcast.getHostAddress() + "; Interface: " + networkInterface.getDisplayName());
+						DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, broadcast, BROADCAST_PORT);
 						socket.send(sendPacket);
 					} catch (Exception e) {
 						logger.error("Error: {}", e);
 					}
-
-					logger.info(">>> Request packet sent to: " + broadcast.getHostAddress() + "; Interface: " + networkInterface.getDisplayName());
 				}
 			}
 
+			logger.info("Waiting for an answer...");
 
-			logger.info("Start receiving broadcast...");
+			while (true) {
+				try {
+					byte[] recvBuf = new byte[15000];
+					DatagramPacket packet = new DatagramPacket(recvBuf, recvBuf.length);
+					socket.setSoTimeout(BROADCAST_TIMEOUT);
+					socket.receive(packet);
+					logger.debug("Packet received: {}", packet.getData().toString());
 
-			//Receive a packet
-			byte[] recvBuf = new byte[15000];
-			DatagramPacket packet = new DatagramPacket(recvBuf, recvBuf.length);
-			try {
-				socket.setSoTimeout(1000);
-				socket.receive(packet);
-			} catch (SocketTimeoutException e) {
-				logger.error("Timeout - Niko not discovered");
-				return null;
+					//check if answer received from Niko -- data should start with "D"
+					if (packet.getData().toString().substring(0,1).equals("D")) {
+						//niko found
+						//Retrieving IP
+						String ip = packet.getAddress().getHostAddress();
+						logger.info("Niko IP found: {}",ip);
+						return ip;
+
+					} else {
+						//wait for another packet
+						continue;
+					}
+				} catch (SocketTimeoutException e) {
+					logger.error("Timeout - Niko not discovered");
+					return null;
+				}
 			}
 
-			//Packet received
-			logger.info(">>> Discovery packet received from: " + packet.getAddress().getHostAddress());
-			logger.info(">>> Packet received; data: " + new String(packet.getData()));
-
-			//ip found
-			return packet.getAddress().getHostAddress();
 		} catch (IOException e) {
 			//logger.error("Error: {}", e);
 			e.printStackTrace();

@@ -23,16 +23,7 @@ public class NikoCommandService {
 	public void startEvent () {
 		String cmd = "{\"cmd\":\"startevents\"}";
 
-		sendData(cmd);
+		stream.write(cmd);
 	}
 
-	private void sendData (String cmd) {
-		logger.info("Sending data: {}", cmd);
-		try {
-			stream.getOut().write(cmd.getBytes());
-		} catch (IOException e) {
-			logger.info("Error: {}", e);
-			e.printStackTrace();
-		}
-	}
 }
