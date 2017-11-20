@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -84,5 +85,10 @@ public class NikoStream {
 
 	public boolean isConnected() {
 		return connected;
+	}
+
+	@PreDestroy
+	public void cleanUp () {
+		logger.info("Cleaning up...");
 	}
 }

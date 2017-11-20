@@ -24,8 +24,8 @@ public class DomoticsCoreApplication {
 			logger.info("Niko not found, closing application...");
 			context.close();
 		}
+
 		logger.info("end main");
 	}
-
 
 }

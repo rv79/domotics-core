@@ -82,11 +82,11 @@ public class NikoConfig {
 					DatagramPacket packet = new DatagramPacket(recvBuf, recvBuf.length);
 					socket.setSoTimeout(BROADCAST_TIMEOUT);
 					socket.receive(packet);
-					String data = new String(packet.getData());
+					String data = new String(packet.getData()).substring(0,1);
 					logger.debug("Packet received: {}", data);
 
 					//check if answer received from Niko -- data should start with "D"
-					if (data.substring(0,1).equals("D")) {
+					if (data.equals("D")) {
 						//niko found
 						//Retrieving IP
 						String ip = packet.getAddress().getHostAddress();

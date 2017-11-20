@@ -5,6 +5,8 @@ import org.domotics.domoticscore.niko.config.NikoConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
+
 @Service
 public class NikoService {
 
@@ -23,6 +25,7 @@ public class NikoService {
 	public NikoService() {
 	}
 
+	//@PostConstruct
 	public void init () {
 		// init listen service
 		listenService.listen();
