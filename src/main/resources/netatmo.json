@@ -1,0 +1,335 @@
+{
+  "body": {
+    "devices": [
+      {
+        "_id": "70:ee:50:12:ae:0e",
+        "cipher_id": "enc:16:jeOxVpTs0MyFFjXozqkhdMK9WvQ4lNwdWjRZ8Ag65E1a63ZW5KYbLhl26+PVLC9b",
+        "last_status_store": 1519745077,
+        "modules": [
+          {
+            "_id": "02:00:00:12:69:d8",
+            "type": "NAModule1",
+            "last_message": 1519745071,
+            "last_seen": 1519745071,
+            "dashboard_data": {
+              "time_utc": 1519745020,
+              "Temperature": -5.5,
+              "temp_trend": "stable",
+              "Humidity": 59,
+              "date_max_temp": 1519744713,
+              "date_min_temp": 1519716024,
+              "min_temp": -9.6,
+              "max_temp": -5.5
+            },
+            "data_type": [
+              "Temperature",
+              "Humidity"
+            ],
+            "module_name": "Ext\u00e9rieur",
+            "last_setup": 1431120020,
+            "battery_vp": 5000,
+            "battery_percent": 58,
+            "rf_status": 71,
+            "firmware": 44
+          },
+          {
+            "_id": "03:00:00:02:42:34",
+            "type": "NAModule4",
+            "last_message": 1519745071,
+            "last_seen": 1519745033,
+            "dashboard_data": {
+              "time_utc": 1519745033,
+              "Temperature": 8.6,
+              "temp_trend": "down",
+              "Humidity": 34,
+              "CO2": 379,
+              "date_max_temp": 1519731077,
+              "date_min_temp": 1519745033,
+              "min_temp": 8.6,
+              "max_temp": 22.3
+            },
+            "data_type": [
+              "Temperature",
+              "CO2",
+              "Humidity"
+            ],
+            "module_name": "Serre",
+            "last_setup": 1434303028,
+            "battery_vp": 5219,
+            "battery_percent": 57,
+            "rf_status": 94,
+            "firmware": 44
+          },
+          {
+            "_id": "05:00:00:01:26:dc",
+            "type": "NAModule3",
+            "last_message": 1519745071,
+            "last_seen": 1519745071,
+            "dashboard_data": {
+              "time_utc": 1519745058,
+              "Rain": 0,
+              "sum_rain_24": 0,
+              "sum_rain_1": 0
+            },
+            "data_type": [
+              "Rain"
+            ],
+            "module_name": "Pluviom\u00e8tre",
+            "last_setup": 1437413529,
+            "battery_vp": 4862,
+            "battery_percent": 53,
+            "rf_status": 85,
+            "firmware": 8,
+            "pluvio_scale_auget_to_mm": 0.10104250200481
+          },
+          {
+            "_id": "03:00:00:03:24:be",
+            "type": "NAModule4",
+            "last_message": 1519745071,
+            "last_seen": 1519744084,
+            "dashboard_data": {
+              "time_utc": 1519744084,
+              "Temperature": 10.4,
+              "temp_trend": "down",
+              "Humidity": 23,
+              "date_max_temp": 1519741579,
+              "date_min_temp": 1519744084,
+              "min_temp": 10.4,
+              "max_temp": 22.7
+            },
+            "data_type": [
+              "Temperature",
+              "CO2",
+              "Humidity"
+            ],
+            "module_name": "Garage",
+            "last_setup": 1457199554,
+            "battery_vp": 5083,
+            "battery_percent": 49,
+            "rf_status": 98,
+            "firmware": 44
+          },
+          {
+            "_id": "06:00:00:01:61:70",
+            "type": "NAModule2",
+            "last_message": 1519745071,
+            "last_seen": 1519745071,
+            "dashboard_data": {
+              "WindAngle": 67,
+              "WindStrength": 9,
+              "GustAngle": 41,
+              "GustStrength": 17,
+              "time_utc": 1519745059,
+              "WindHistoric": [
+                {
+                  "WindStrength": 8,
+                  "WindAngle": 74,
+                  "time_utc": 1519741579
+                },
+                {
+                  "WindStrength": 9,
+                  "WindAngle": 49,
+                  "time_utc": 1519741881
+                },
+                {
+                  "WindStrength": 9,
+                  "WindAngle": 48,
+                  "time_utc": 1519741894
+                },
+                {
+                  "WindStrength": 10,
+                  "WindAngle": 52,
+                  "time_utc": 1519742059
+                },
+                {
+                  "WindStrength": 10,
+                  "WindAngle": 66,
+                  "time_utc": 1519742354
+                },
+                {
+                  "WindStrength": 8,
+                  "WindAngle": 58,
+                  "time_utc": 1519742655
+                },
+                {
+                  "WindStrength": 10,
+                  "WindAngle": 72,
+                  "time_utc": 1519742956
+                },
+                {
+                  "WindStrength": 9,
+                  "WindAngle": 59,
+                  "time_utc": 1519743259
+                },
+                {
+                  "WindStrength": 9,
+                  "WindAngle": 66,
+                  "time_utc": 1519743559
+                },
+                {
+                  "WindStrength": 9,
+                  "WindAngle": 68,
+                  "time_utc": 1519743854
+                },
+                {
+                  "WindStrength": 6,
+                  "WindAngle": 68,
+                  "time_utc": 1519744155
+                },
+                {
+                  "WindStrength": 8,
+                  "WindAngle": 71,
+                  "time_utc": 1519744457
+                },
+                {
+                  "WindStrength": 8,
+                  "WindAngle": 56,
+                  "time_utc": 1519744758
+                },
+                {
+                  "WindStrength": 9,
+                  "WindAngle": 67,
+                  "time_utc": 1519745059
+                }
+              ],
+              "date_max_wind_str": 1519722970,
+              "date_max_temp": 1519686267,
+              "date_min_temp": 1519686267,
+              "min_temp": 0,
+              "max_temp": 0,
+              "max_wind_angle": 79,
+              "max_wind_str": 28
+            },
+            "data_type": [
+              "Wind"
+            ],
+            "module_name": "An\u00e9mom\u00e8tre",
+            "last_setup": 1487496224,
+            "battery_vp": 4720,
+            "battery_percent": 38,
+            "rf_status": 78,
+            "firmware": 18
+          },
+          {
+            "_id": "03:00:00:03:f2:ec",
+            "type": "NAModule4",
+            "last_message": 1519745071,
+            "last_seen": 1519745027,
+            "dashboard_data": {
+              "time_utc": 1519745027,
+              "Temperature": 11.8,
+              "temp_trend": "down",
+              "Humidity": 45,
+              "CO2": 289,
+              "date_max_temp": 1519740720,
+              "date_min_temp": 1519745027,
+              "min_temp": 11.8,
+              "max_temp": 23
+            },
+            "data_type": [
+              "Temperature",
+              "CO2",
+              "Humidity"
+            ],
+            "module_name": "Cave \u00e0 vin",
+            "last_setup": 1488184580,
+            "battery_vp": 5638,
+            "battery_percent": 80,
+            "rf_status": 84,
+            "firmware": 44
+          }
+        ],
+        "place": {
+          "altitude": 327,
+          "city": "Maisons Alteschmeltz",
+          "country": "LU",
+          "timezone": "Europe\/Luxembourg",
+          "location": [
+            5.988589,
+            49.70936
+          ],
+          "improveLocProposed": true,
+          "trust_location": true,
+          "geoip_city": "Luxembourg"
+        },
+        "station_name": "Greisch",
+        "type": "NAMain",
+        "dashboard_data": {
+          "AbsolutePressure": 973.5,
+          "time_utc": 1519745062,
+          "Noise": 35,
+          "Temperature": 20.8,
+          "temp_trend": "stable",
+          "Humidity": 31,
+          "Pressure": 1012.1,
+          "pressure_trend": "down",
+          "CO2": 569,
+          "date_max_temp": 1519731384,
+          "date_min_temp": 1519717861,
+          "min_temp": 18.5,
+          "max_temp": 25
+        },
+        "data_type": [
+          "Temperature",
+          "CO2",
+          "Humidity",
+          "Noise",
+          "Pressure"
+        ],
+        "co2_calibrating": false,
+        "date_setup": 1431120019,
+        "last_setup": 1431120019,
+        "module_name": "Bureau",
+        "firmware": 132,
+        "last_upgrade": 1440396875,
+        "wifi_status": 68,
+        "module_installed": {
+          "wind": false
+        },
+        "user_owner": [
+          "554d27e14b5a882ed45b5ef8"
+        ],
+        "access_code": "yQ0yhiZeBnU",
+        "alarm_config": {
+          "default_alarm": [
+            {
+              "db_alarm_number": 22
+            },
+            {
+              "db_alarm_number": 23
+            },
+            {
+              "db_alarm_number": 24
+            },
+            {
+              "db_alarm_number": 25
+            }
+          ]
+        },
+        "public_ext_data": true,
+        "meteo_alarms": [],
+        "command": {
+          "customer_id": "C00016",
+          "order_id": "12083",
+          "sku": "NWS01-EC"
+        }
+      }
+    ],
+    "user": {
+      "mail": "hervemathonet@hotmail.com",
+      "administrative": {
+        "country": "LU",
+        "reg_locale": "en-US",
+        "lang": "en-US",
+        "unit": 0,
+        "windunit": 0,
+        "pressureunit": 0,
+        "feel_like_algo": 0
+      },
+      "fb_chatbot_available": true
+    }
+  },
+  "status": "ok",
+  "time_exec": 0.12752294540405,
+  "time_server": 1519745198
+}
